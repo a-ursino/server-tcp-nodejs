@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "test:watch": "jest --bail --watchAll",
     "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters lcov",
     "start": "export DEBUG=server && node index.js",
     "start:client": "tc 127.0.0.1 10000",
     "start:client:win": "telnet 127.0.0.1 10000"

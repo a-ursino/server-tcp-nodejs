@@ -9,6 +9,7 @@ the connected clients.
 - Select the correct version (v10.13.0 atm) of NodeJS `nvm use`
 - Run all the tests (Unit and Functional) with [Jest](https://github.com/facebook/jest) `npn test`
 - Run all the tests watching all the files `npn run test:watch`
+- Generate code coverage (unit tests) `npn run test:coverage`
 - Format the code with [Prettier](https://github.com/prettier/prettier) `npm run format`
 - Lint all the code with [ESLint](https://github.com/eslint/eslint) `npm run lint`
 - Start the server `npn start`

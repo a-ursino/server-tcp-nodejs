@@ -1,0 +1,9 @@
+## generic
+**/node_modules/*
+package-lock.json
+coverage
+.DS_Store
+.eslintignore
+.gitignore
+.nvmrc
+.prettierignore
