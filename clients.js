@@ -5,7 +5,14 @@ const ClientsFactory = () => {
       connectedClient.push(client);
     },
     remove(client) {
-      connectedClient.splice(connectedClient.indexOf(client), 1);
+      const removed = connectedClient.splice(
+        connectedClient.indexOf(client),
+        1
+      );
+      if (removed.length === 0) {
+        return false;
+      }
+      return true;
     },
     broadcast(buffer, filter) {
       connectedClient

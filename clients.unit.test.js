@@ -34,4 +34,31 @@ describe("the Clients should", () => {
     expect(socketMockOne.write).toBeCalledTimes(0);
     expect(socketMockTwo.write).toBeCalledTimes(1);
   });
+
+  test("return 1 after we add 2 client and remove 1", () => {
+    const clients = ClientsFactory();
+    const socketMockOne = {};
+    const socketMockTwo = {};
+    clients.add(socketMockOne);
+    clients.add(socketMockTwo);
+    clients.remove(socketMockOne);
+    expect(clients.length()).toBe(1);
+  });
+  test("return 0 after we add 2 client and remove 1", () => {
+    const clients = ClientsFactory();
+    const socketMockOne = {};
+    const socketMockTwo = {};
+    clients.add(socketMockOne);
+    clients.add(socketMockTwo);
+    clients.remove(socketMockOne);
+    clients.remove(socketMockTwo);
+    expect(clients.length()).toBe(0);
+  });
+  test("return false if we remove two times the same socket", () => {
+    const clients = ClientsFactory();
+    const socketMockOne = {};
+    clients.add(socketMockOne);
+    clients.remove(socketMockOne);
+    expect(clients.remove(socketMockOne)).toBe(false);
+  });
 });
