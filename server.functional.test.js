@@ -6,7 +6,7 @@ const ClientFactory = require("./client");
 const port = 10000;
 
 describe("the server should", () => {
-  test("broadcast the messege sent by the client to all the clients", () => {
+  test("broadcast the messege sent by the client to all the others clients", () => {
     const server = ServerFactory();
     server.listen(port, () => {
       debug("The server started at localhost port:", port);

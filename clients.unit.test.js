@@ -35,7 +35,7 @@ describe("the Clients should", () => {
     expect(socketMockTwo.write).toBeCalledTimes(1);
   });
 
-  test("return 1 after we add 2 client and remove 1", () => {
+  test("return 1 after we add 2 clients and remove 1", () => {
     const clients = ClientsFactory();
     const socketMockOne = {};
     const socketMockTwo = {};
@@ -44,7 +44,7 @@ describe("the Clients should", () => {
     clients.remove(socketMockOne);
     expect(clients.length()).toBe(1);
   });
-  test("return 0 after we add 2 client and remove 1", () => {
+  test("return 0 after we add 2 clients and remove 2", () => {
     const clients = ClientsFactory();
     const socketMockOne = {};
     const socketMockTwo = {};

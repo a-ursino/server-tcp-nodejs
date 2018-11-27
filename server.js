@@ -9,7 +9,7 @@ const serverFactory = () => {
 
   server.on("connection", clientSocket => {
     clients.add(clientSocket);
-    debug("New connection from a client n°", clients.length());
+    debug("New connection from client n°", clients.length());
 
     clientSocket.on("data", chunk => {
       clients.broadcast(chunk, clientSocket);
@@ -32,7 +32,7 @@ const serverFactory = () => {
 
   server.on("error", err => {
     if (err.code === "EADDRINUSE") {
-      debug("Address in use, retrying...");
+      debug("Address in use, retry.");
       server.close();
     }
     debug("Server Error", err);
